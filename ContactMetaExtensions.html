@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>Contact Meta Extensions</TITLE>
+	<STYLE TYPE="text/css">
+	h3 { color: rgb(79,129,189); }
+        body { margin-left: 50px; margin-right: 50px; }	
+	</STYLE>
+</HEAD>
+<BODY LANG="en-IN" DIR="LTR">
+<P ALIGN=CENTER STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif" color="rgb(23,54,94)" size=5><B>The
+‘contact-number’, ‘contact-mail’ and ‘contact-address’ meta extensions</B></FONT></P>
+<HR>
+<P><BR>
+</P>
+<H3 CLASS="western">Overview:</H3>
+<P STYLE="margin-bottom: 0cm">You realize that your wallet has been
+stolen only when you start getting notifications of unauthorized
+transactions on your credit cards.</P>
+<P STYLE="margin-bottom: 0cm">Panicking, you quickly try to contact
+your friend who works for a bank for advice. There is a delay of only
+a few moments as you search through your phone’s contact list to
+get his number.</P>
+<P STYLE="margin-bottom: 0cm">On being advised to get your cards
+blocked immediately, you then try to obtain the customer care number
+of your bank. However now, you lose precious minutes as your search
+in vain for the contact number amidst the melee of links that clutter
+your bank’s website page. 
+</P>
+<P STYLE="margin-bottom: 0cm">Juxtapose this to a scenario wherein
+all that you had to do to get the customer care number of your bank
+would be to simply fetch the bank’s website and select a browser
+menu option called “Call” which would then automatically dial
+your bank’s customer support number.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+
+<H3 CLASS="western">Proposal:</H3>
+<P STYLE="margin-bottom: 0cm">The <B>contact-number</B> meta
+extension defines a proposed phone number, such as the customer
+support number, specified by the vendor. 
+</P>
+<P STYLE="margin-bottom: 0cm">The <B>contact-mail</B> meta extension
+defines a suggested e-mail ID, such as the customer support mail ID,
+specified by the vendor.</P>
+<P STYLE="margin-bottom: 0cm">The <B>contact-address</B> meta
+extension defines a given address (or geolocation tag), such as the
+vendor’s office address or billing address.</P>
+<P STYLE="margin-bottom: 0cm">UA's displaying a page containing any
+or all of these meta extensions could then make this information
+directly available for the user’s perusal.</P>
+<P STYLE="margin-bottom: 0cm">Often visitors have to hunt through a
+vendor's site for obtaining the customer support mail ID, phone
+number etc. which is mostly hidden behind a not so prominently
+displayed &quot;Help&quot; or &quot;Contact Us&quot; link.</P>
+<P STYLE="margin-bottom: 0cm">Vendor's specifying their registered
+mail ID, phone number and/or their address via these meta extensions
+can thus expect supporting UA's to present this information to the
+user in an easily accessible format, either by way of a browser menu
+option (such as &quot;mail&quot;, “call”, “map”) or via the
+URL bar scheme handler or in another similar format.</P>
+<P STYLE="margin-bottom: 0cm">Selecting these menu options, if
+available, should launch the default mail application with the
+specified mail ID, the dialer application with the given contact
+number or, the default maps application loaded with the specified
+address/location tag respectively.</P>
+<P STYLE="margin-bottom: 0cm">No known existing meta extensions with
+a similar name/intention exist.</P>
+<P STYLE="margin-bottom: 0cm"> </P>
+
+<H3 CLASS="western">Syntax:</H3>
+<P STYLE="margin-bottom: 0cm"><I>&lt;meta name=&quot;<B>contact-number</B>&quot;
+content=&quot;+1-555-555-5555&quot;&gt;</I></P>
+<P STYLE="margin-bottom: 0cm">The content attribute for the
+contact-number meta extension can take any valid phone number.</P>
+<P STYLE="margin-bottom: 0cm">Or</P>
+<P STYLE="margin-bottom: 0cm"><I>&lt;meta name=&quot;<B>contact-number</B>&quot;
+content=&quot;Chicago: +1-555-555-5555 ; Brookfield: +1-444-444-4444
+; Naperville: +1-333-333-3333&quot;&gt;</I></P>
+<P STYLE="margin-bottom: 0cm">Again, a semi-colon separated list of
+name-value pairs can be specified for listing out multiple phone
+numbers.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><I>&lt;meta name=&quot;<B>contact-mail</B>&quot;
+content=&quot;abc@xyz.com&quot;&gt;</I></P>
+<P STYLE="margin-bottom: 0cm">The content attribute for the
+contact-mail meta extension can take any valid email ID.</P>
+<P STYLE="margin-bottom: 0cm">Or</P>
+<P STYLE="margin-bottom: 0cm"><I>&lt;meta name=&quot;<B>contact-mail</B>&quot;
+content=&quot;Chicago: abc@xyz.com ; Brookfield: def@xyz.com ;
+Naperville: jkl@xyz.com&quot;&gt;</I></P>
+<P STYLE="margin-bottom: 0cm">In case multiple entries need to be
+specified, a semi-colon separated name – value pair list can also
+be provided. The onus lies on the User Agent to parse the list and
+make its contents available to the user accordingly.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><I>&lt;meta name=&quot;</I><I><B>contact-address</B></I><I>&quot;
+content=&quot;Jane Doe, 5844 South Oak Street, Chicago, Illinois
+60667&quot;&gt; </I><SPAN STYLE="font-style: normal">or</SPAN></P>
+<P STYLE="margin-bottom: 0cm"><I>&lt;meta name=”<B>contact-address</B>”
+content=”20.593684,78.96288”&gt;</I></P>
+<P STYLE="margin-bottom: 0cm">The content attribute for the
+contact-address meta extension can be any string or latitude and
+longitude.</P>
+<P STYLE="margin-bottom: 0cm">Or</P>
+<P STYLE="margin-bottom: 0cm"><I>&lt;meta name=&quot;<B>contact-address</B>&quot;
+content=&quot;Chicago:  5844 South Oak Street, Chicago, Illinois
+60667 ; Brookfield: 2341 Cherry Lane, Brookfield, Illinois ;
+Naperville: 515 W. Jefferson, Naperville, Illinois 60540”&gt;</I></P>
+<P STYLE="margin-bottom: 0cm">For specifying multiple addresses, we
+have a semi-colon separated list of name-value pairs.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+
+<H3 CLASS="western">Drawings:</H3>
+<img src="CallOption.jpg" width="800px"/>
+<P STYLE="margin-top: 0.21cm"><FONT SIZE=3><I>Selecting the Call
+option for the site icicibank.com should launch the dialer
+application with the given contact-number.</I></FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<img src="MailOption.jpg" width="800px"/>
+<P STYLE="margin-top: 0.21cm"><FONT SIZE=3><I>Selecting the Mail
+option should navigate; and launch the chosen mailing app with the
+specified contact-mail.</I></FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<img src="MapOption.jpg" width="800px"/>
+<P STYLE="margin-top: 0.21cm"><FONT SIZE=3><I>Selecting the Map
+option should launch the specified contact-address on the default map
+application.</I></FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+
+<H3 CLASS="western">Use Case (for multiple contact numbers, mail IDs
+and addresses):</H3>
+<P STYLE="margin-bottom: 0cm">We take the example of a banking
+website. In case of international banks (e.g. Citibank) we are posed
+with the challenge of enlisting all their contact details, spread
+across different nations.</P>
+<P STYLE="margin-bottom: 0cm">Vendors mostly maintain granularity at
+a national level, redirecting the users to the country specific
+website automatically. This would be handled at the server itself
+wherein different pages shall be pushed based on the requesting IP.
+The website author can thus deliver country specific information to
+the users.</P>
+<P STYLE="margin-bottom: 0cm">However, the bank will also have
+multiple offices throughout the country and multiple branches within
+the same city. The website author shall have to provide all the
+information regarding the bank’s various locations and
+corresponding customer care numbers and mail IDs. This forms the
+basis for having a syntax that is capable of accommodating multiple
+entries for contact numbers, mail IDs or addresses.</P>
+<P STYLE="margin-bottom: 0cm">The UA could list down all the
+available options thereby enabling the user to make an informed
+choice.</P>
+<P STYLE="margin-bottom: 0cm">An option for filtering the available
+options (based on the name) can also be provided to the end user.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+
+<H3 CLASS="western">Use Case (for geo-fencing):</H3>
+<P STYLE="margin-bottom: 0cm">Consider the same example of a banking
+website wherein the bank has several branches located within the same
+city. It would be highly beneficial to the user in such cases if the
+UA were to display the nearest branch address based on the user’s
+current location.</P>
+<P STYLE="margin-bottom: 0cm">The user’s location information (if
+available) can be retrieved by the UA and the same can then be used
+to predict the nearest branch office from the list of the available
+offices. Corresponding contact-number too (if available) can be
+extracted (if specified with the same ‘name’).</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+
+<H3 CLASS="western">As part of the Manifest:</H3>
+<P STYLE="margin-bottom: 0cm">Considering the aforementioned use
+cases, we are now faced with the possibility of having lengthy
+contact number and/or address lists being specified in meta tags.
+This would unnecessarily make the markup cumbersome and lengthy. 
+</P>
+<P STYLE="margin-bottom: 0cm">Instead, we could specify these values
+as part of the new json based Manifest
+[<A HREF="http://w3c.github.io/manifest/">http://w3c.github.io/manifest/</A>].</P>
+<P STYLE="margin-bottom: 0cm">The name-value pairs can easily be
+defined in the json format and since the Manifest would ideally not
+be updated as often as the main resource it thus offers to be a more
+optimal solution.</P>
+</BODY>
+</HTML>
