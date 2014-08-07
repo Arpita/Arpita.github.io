@@ -6,7 +6,7 @@
 	<STYLE TYPE="text/css">
 	h3 { color: rgb(79,129,189); }
         body { margin-left: 90px; margin-right: 90px; }	
-        .example { margin-left: 100px; margin-right: 120px; background-color: rgb(159,207,255); border-style: none none none solid; border-width: 0 0 0 0.3rem; border-color: rgb(23,54,94); }
+        .example { margin-left: 100px; margin-right: 120px; background-color: rgb(191,223,255); border-style: none none none solid; border-width: 0 0 0 0.3rem; border-color: rgb(23,54,94); }
 	</STYLE>
 </HEAD>
 <BODY LANG="en-IN" DIR="LTR">
@@ -15,7 +15,7 @@
 <HR>
 <P><BR>
 </P>
-<H3 CLASS="western">Overview:</H3>
+<H3>Overview:</H3>
 <P STYLE="margin-bottom: 0cm">You realize that your wallet has been
 stolen only when you start getting notifications of unauthorized
 transactions on your credit cards.</P>
@@ -37,7 +37,7 @@ your bank’s customer support number.</P>
 <P STYLE="margin-bottom: 0cm"><BR>
 </P>
 
-<H3 CLASS="western">Proposal:</H3>
+<H3>Proposal:</H3>
 <P STYLE="margin-bottom: 0cm">The <B>contact</B> meta extension defines the vendor's contact information by way of a phone number (such as a customer support number), an e-mail ID (such as the customer support mail ID) or a physical address (such as the office address or billing address). 
 </P>
 <P STYLE="margin-bottom: 0cm">UA's displaying a page containing this meta extension could then make this contact information directly available for the user’s perusal.</P>
@@ -60,7 +60,7 @@ address/location tag respectively.</P>
 a similar name/intention exist.</P>
 <P STYLE="margin-bottom: 0cm"> </P>
 
-<H3 CLASS="western">Syntax:</H3>
+<H3>Syntax:</H3>
 <P class="example"><code>&lt;meta name=&quot;<B>contact</B>&quot;
 content=&quot;+1-555-555-5555 abc@xyz.com '5844 South Oak Street, Chicago, Illinois' &quot;&gt;</code></P>
 <P STYLE="margin-bottom: 0cm">The content attribute for the
@@ -76,7 +76,7 @@ content=&quot;Chicago: +1-555-555-5555  abc@xyz.com '20.593684;78.96288'; Brookf
 </P>
 
 
-<H3 CLASS="western">Drawings:</H3>
+<H3>Drawings:</H3>
 <img src="CallOption.jpg" width="800px"/>
 <P STYLE="margin-top: 0.21cm"><FONT SIZE=3><I>Selecting the Call
 option for the site icicibank.com should launch the dialer
@@ -96,7 +96,7 @@ application.</I></FONT></P>
 <P STYLE="margin-bottom: 0cm"><BR>
 </P>
 
-<H3 CLASS="western">Use Case (for multiple contact numbers, mail IDs
+<H3>Use Case (for multiple contact numbers, mail IDs
 and addresses):</H3>
 <P STYLE="margin-bottom: 0cm">We take the example of a banking
 website. In case of international banks (e.g. Citibank) we are posed
@@ -123,7 +123,7 @@ options (based on the name) can also be provided to the end user.</P>
 <P STYLE="margin-bottom: 0cm"><BR>
 </P>
 
-<H3 CLASS="western">Use Case (for geo-fencing):</H3>
+<H3>Use Case (for geo-fencing):</H3>
 <P STYLE="margin-bottom: 0cm">Consider the same example of a banking
 website wherein the bank has several branches located within the same
 city. It would be highly beneficial to the user in such cases if the
@@ -137,7 +137,7 @@ extracted (if specified with the same ‘name’).</P>
 <P STYLE="margin-bottom: 0cm"><BR>
 </P>
 
-<H3 CLASS="western">As part of the Manifest:</H3>
+<H3>As part of the Manifest:</H3>
 <P STYLE="margin-bottom: 0cm">Considering the aforementioned use
 cases, we are now faced with the possibility of having lengthy
 contact number and/or address lists being specified in meta tags.
@@ -150,5 +150,18 @@ as part of the new json based Manifest
 defined in the json format and since the Manifest would ideally not
 be updated as often as the main resource it thus offers to be a more
 optimal solution.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+
+<H3>As an HTML tag:</H3>
+<P STYLE="margin-bottom: 0cm">The contact information can also be provided via an HTML tag: &lt;contact&gt;. As an HTML tag, the complexities arising due to mapping of contact information to a particular location, can be avoided.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+
+<H3>Future enhancements:</H3>
+<P STYLE="margin-bottom: 0cm">Provision for video calls and/or instant messaging sessions between the client and the vendor can also be provided for, thereby enhancing accessibility.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+
 </BODY>
 </HTML>
