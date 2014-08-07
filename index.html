@@ -5,12 +5,13 @@
 	<TITLE>Contact Meta Extensions</TITLE>
 	<STYLE TYPE="text/css">
 	h3 { color: rgb(79,129,189); }
-        body { margin-left: 50px; margin-right: 50px; }	
+        body { margin-left: 90px; margin-right: 90px; }	
+        example { margin-left: 120px; margin-right: 120px; backgroud: none repeat scroll 0 0 rgb(23,54,94); border-style: none none none solid; border-width: 0 0 0 0.5rem; border-color: rgb(23,54,94); }
 	</STYLE>
 </HEAD>
 <BODY LANG="en-IN" DIR="LTR">
 <P ALIGN=CENTER STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="Arial, sans-serif" color="rgb(23,54,94)" size=5><B>The
-‘contact-number’, ‘contact-mail’ and ‘contact-address’ meta extensions</B></FONT></P>
+‘contact’ meta extension</B></FONT></P>
 <HR>
 <P><BR>
 </P>
@@ -37,26 +38,16 @@ your bank’s customer support number.</P>
 </P>
 
 <H3 CLASS="western">Proposal:</H3>
-<P STYLE="margin-bottom: 0cm">The <B>contact-number</B> meta
-extension defines a proposed phone number, such as the customer
-support number, specified by the vendor. 
+<P STYLE="margin-bottom: 0cm">The <B>contact</B> meta extension defines the vendor's contact information by way of a phone number (such as a customer support number), an e-mail ID (such as the customer support mail ID) or a physical address (such as the office address or billing address). 
 </P>
-<P STYLE="margin-bottom: 0cm">The <B>contact-mail</B> meta extension
-defines a suggested e-mail ID, such as the customer support mail ID,
-specified by the vendor.</P>
-<P STYLE="margin-bottom: 0cm">The <B>contact-address</B> meta
-extension defines a given address (or geolocation tag), such as the
-vendor’s office address or billing address.</P>
-<P STYLE="margin-bottom: 0cm">UA's displaying a page containing any
-or all of these meta extensions could then make this information
-directly available for the user’s perusal.</P>
+<P STYLE="margin-bottom: 0cm">UA's displaying a page containing this meta extension could then make this information directly available for the user’s perusal.</P>
 <P STYLE="margin-bottom: 0cm">Often visitors have to hunt through a
 vendor's site for obtaining the customer support mail ID, phone
 number etc. which is mostly hidden behind a not so prominently
 displayed &quot;Help&quot; or &quot;Contact Us&quot; link.</P>
 <P STYLE="margin-bottom: 0cm">Vendor's specifying their registered
-mail ID, phone number and/or their address via these meta extensions
-can thus expect supporting UA's to present this information to the
+mail ID, phone number and/or their address via this meta extension
+can thus expect supporting UA's to present the contact information to the
 user in an easily accessible format, either by way of a browser menu
 option (such as &quot;mail&quot;, “call”, “map”) or via the
 URL bar scheme handler or in another similar format.</P>
@@ -70,50 +61,21 @@ a similar name/intention exist.</P>
 <P STYLE="margin-bottom: 0cm"> </P>
 
 <H3 CLASS="western">Syntax:</H3>
-<P STYLE="margin-bottom: 0cm"><I>&lt;meta name=&quot;<B>contact-number</B>&quot;
-content=&quot;+1-555-555-5555&quot;&gt;</I></P>
+<P class="example"><I>&lt;meta name=&quot;<B>contact</B>&quot;
+content=&quot;+1-555-555-5555 abc@xyz.com '5844 South Oak Street, Chicago, Illinois'&quot;&gt;</I></P>
 <P STYLE="margin-bottom: 0cm">The content attribute for the
-contact-number meta extension can take any valid phone number.</P>
+contact meta extension is a space separated string containing the phone-number followed by the e-mail ID and then the address (specified within quotes).</P>
 <P STYLE="margin-bottom: 0cm">Or</P>
-<P STYLE="margin-bottom: 0cm"><I>&lt;meta name=&quot;<B>contact-number</B>&quot;
-content=&quot;Chicago: +1-555-555-5555 ; Brookfield: +1-444-444-4444
-; Naperville: +1-333-333-3333&quot;&gt;</I></P>
-<P STYLE="margin-bottom: 0cm">Again, a semi-colon separated list of
-name-value pairs can be specified for listing out multiple phone
-numbers.</P>
+<P class="example"><I>&lt;meta name=&quot;<B>contact</B>&quot;
+content=&quot;Chicago: +1-555-555-5555  abc@xyz.com '5844 South Oak Street, Chicago, Illinois'; Brookfield: +1-444-444-4444 def@xyz.com '2341 Cherry Lane, Brookfield, Illinois'; Naperville: +1-333-333-3333 jkl@xyz.com '515 W. Jefferson, Naperville, Illinois 60540'&quot;&gt;</I></P>
+<P STYLE="margin-bottom: 0cm">For specifying multiple entries a semi-colon separated list of name-value pairs can be defined. The name can be any descriptive tag defined for the given data.</P>
+<P STYLE="margin-bottom: 0cm">Valid phone numbers and mail IDs should be provided by the vendor. The address can either be any string specified within quotes or, latitude and longtitude coordinates.</p>
+<P class="example"><I>&lt;meta name=&quot;<B>contact</B>&quot;
+content=&quot;Chicago: +1-555-555-5555  abc@xyz.com '5844 South Oak Street, Chicago, Illinois'; Brookfield: +1-444-444-4444 def@xyz.com '2341 Cherry Lane, Brookfield, Illinois'; Naperville: +1-333-333-3333 jkl@xyz.com '515 W. Jefferson, Naperville, Illinois 60540'&quot;&gt;</I></P>
+<P STYLE="margin-bottom: 0cm">The parsing of the content attribute needs to be done in a way similar to the CSS style shorthand notifications</P>
 <P STYLE="margin-bottom: 0cm"><BR>
 </P>
-<P STYLE="margin-bottom: 0cm"><I>&lt;meta name=&quot;<B>contact-mail</B>&quot;
-content=&quot;abc@xyz.com&quot;&gt;</I></P>
-<P STYLE="margin-bottom: 0cm">The content attribute for the
-contact-mail meta extension can take any valid email ID.</P>
-<P STYLE="margin-bottom: 0cm">Or</P>
-<P STYLE="margin-bottom: 0cm"><I>&lt;meta name=&quot;<B>contact-mail</B>&quot;
-content=&quot;Chicago: abc@xyz.com ; Brookfield: def@xyz.com ;
-Naperville: jkl@xyz.com&quot;&gt;</I></P>
-<P STYLE="margin-bottom: 0cm">In case multiple entries need to be
-specified, a semi-colon separated name – value pair list can also
-be provided. The onus lies on the User Agent to parse the list and
-make its contents available to the user accordingly.</P>
-<P STYLE="margin-bottom: 0cm"><BR>
-</P>
-<P STYLE="margin-bottom: 0cm"><I>&lt;meta name=&quot;</I><I><B>contact-address</B></I><I>&quot;
-content=&quot;Jane Doe, 5844 South Oak Street, Chicago, Illinois
-60667&quot;&gt; </I><SPAN STYLE="font-style: normal">or</SPAN></P>
-<P STYLE="margin-bottom: 0cm"><I>&lt;meta name=”<B>contact-address</B>”
-content=”20.593684,78.96288”&gt;</I></P>
-<P STYLE="margin-bottom: 0cm">The content attribute for the
-contact-address meta extension can be any string or latitude and
-longitude.</P>
-<P STYLE="margin-bottom: 0cm">Or</P>
-<P STYLE="margin-bottom: 0cm"><I>&lt;meta name=&quot;<B>contact-address</B>&quot;
-content=&quot;Chicago:  5844 South Oak Street, Chicago, Illinois
-60667 ; Brookfield: 2341 Cherry Lane, Brookfield, Illinois ;
-Naperville: 515 W. Jefferson, Naperville, Illinois 60540”&gt;</I></P>
-<P STYLE="margin-bottom: 0cm">For specifying multiple addresses, we
-have a semi-colon separated list of name-value pairs.</P>
-<P STYLE="margin-bottom: 0cm"><BR>
-</P>
+
 
 <H3 CLASS="western">Drawings:</H3>
 <img src="CallOption.jpg" width="800px"/>
